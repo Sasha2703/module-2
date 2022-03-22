@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Provides database creating functionality.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function guestbook_uninstall() {
+  // Remove tables.
+}
+
+/**
+ * Implements hook_schema().
+ */
+function guestbook_schema() {
+  $schema['responses'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'author_name' => [
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'phone' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'message' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'avatar' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'length' => 64,
+      ],
+      'image' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'length' => 64,
+      ],
+      'timestamp' => [
+        'description' => 'timestamp',
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'default' => '',
+        'length' => 64,
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+  ];
+  return $schema;
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function guestbook_install() {
+  // Use schema API to create database table.
+}

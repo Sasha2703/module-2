@@ -1,0 +1,37 @@
+{{ attach_library('guestbook/guestbook_css') }}
+
+  {{ form }}
+
+<div>
+  {% if responses %}
+    <div class="responses">
+      {% for book in responses %}
+        <div class="book">
+          <div class="personal-data">
+            {% if book.avatar['#isset'] %}
+              <div class="book-avatar"><a href="{{ file_url(book.avatar['#uri']) }}" target="_blank">{{ book.avatar }}</a></div>
+            {% else %}
+              <div class="book-avatar"><a href="{{ book.avatar['#uri'] }}" target="_blank"><img alt="" title="avatar"  class="img-responsive" src="/modules/custom/guestbook/images/default_user.png" width="50" height="50"></a></div>
+            {% endif %}
+            <h4 class="book-name">{{ book.name }}</h4>
+            <h4 class="book-created-time">{{ book.created_time }}</h4>
+
+          </div>
+          <div class="book-content">
+            <h4 class="book-message">{{ book.message }}</h4>
+            <div class="book-image"><a href="{{ file_url(book.image['#uri']) }}" target="_blank">{{ book.image }}</a></div>
+          </div>
+          <div class="contacts">
+            <h4>Contacts: </h4><h4 class="book-email">{{ book.email }}</h4>  <h4 class="book-phone">{{ book.phone }}</h4>
+          </div>
+          {% if user.hasPermission('administer nodes') %}
+            <div class="book-btn">
+              <div class="edit-cat"><a href="/guestbook/edit/{{ book.id }}" class="use-ajax edit-book-btn" data-dialog-type="modal">Edit</a></div>
+              <div class="delete-cat"><a href="/guestbook/delete/{{ book.id }}" class="use-ajax delete-book-btn" data-dialog-type="modal">Delete</a></div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

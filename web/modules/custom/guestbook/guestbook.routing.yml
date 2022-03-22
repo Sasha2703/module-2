@@ -1,0 +1,23 @@
+guestbook.content:
+  path: '/guestbook/user'
+  defaults:
+    _controller: 'Drupal\guestbook\Controller\GuestbookController::content'
+    _title: 'Add your response'
+  requirements:
+    _permission: 'access content'
+
+guestbook.deleteResponse:
+  path: '/guestbook/delete/{bookID}'
+  defaults:
+    _form: '\Drupal\guestbook\Form\DeleteBookForm'
+    _title: 'Are U Sure?'
+  requirements:
+    _role: 'administrator'
+
+guestbook.editResponse:
+  path: '/guestbook/edit/{bookID}'
+  defaults:
+    _form: '\Drupal\guestbook\Form\EditBookForm'
+    _title: 'Are U Sure?'
+  requirements:
+    _role: 'administrator'

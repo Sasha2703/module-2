@@ -1,0 +1,8 @@
+name: Guest Book
+description: Creates functions of guest book, where  people can come in and leave feedback, comments, impressions and wishes.
+package: Custom
+
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+

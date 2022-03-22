@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Provides example functionality.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function guestbook_theme($existing, $type, $theme, $path) {
+  return [
+    'guestbook-template' => [
+      'render' => 'form',
+      'variables' => [
+        'form' => NULL,
+        'responses' => NULL,
+      ],
+    ],
+  ];
+}
