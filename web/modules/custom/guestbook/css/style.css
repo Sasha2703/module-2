@@ -16,8 +16,11 @@
   background: #349b2b;
   color: #0c0c0c;
   border-radius: 10px;
+  border: 1px #349b2b;
 }
-
+.book-form .button:hover {
+  background: #67cc5f;
+}
 .responses {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -37,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.responses .book .personal-data .book-avatar {
+.responses .book .personal-data .book-avatar a  img{
   height: 50px;
   margin-right: 10px;
   width: 50px;
@@ -58,9 +61,7 @@
   text-align: justify;
   min-height: 50px;
 }
-
-.responses .book .book-content .book-image {
-  margin: 0 auto;
+.responses .book .book-content .book-image a img {
   width: 150px;
   height: 150px;
 }
@@ -83,5 +84,5 @@
   background-color: #349b2b;
   color: #0c0c0c;
   border-radius: 10px;
-  border-bottom: 0 dotted;
+  border: 1px #349b2b;
 }
