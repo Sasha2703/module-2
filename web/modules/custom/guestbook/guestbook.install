@@ -6,13 +6,6 @@
  */
 
 /**
- * Implements hook_install().
- */
-function guestbook_uninstall() {
-  // Remove tables.
-}
-
-/**
  * Implements hook_schema().
  */
 function guestbook_schema() {
@@ -73,11 +66,4 @@ function guestbook_schema() {
   ];
   return $schema;
 
-}
-
-/**
- * Implements hook_install().
- */
-function guestbook_install() {
-  // Use schema API to create database table.
 }
